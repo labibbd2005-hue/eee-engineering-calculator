@@ -1,0 +1,245 @@
+/* =========================================================
+   EEE ENGINEERING CALCULATOR
+   Main Stylesheet
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+/* Header */
+
+.header {
+    background: #0b1f3a;
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+    border-bottom: 4px solid #d4af37;
+}
+
+.header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 1.05rem;
+    opacity: 0.9;
+}
+
+
+/* Main container */
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* Introduction */
+
+.intro {
+    text-align: center;
+    padding: 40px 0 25px;
+}
+
+.intro h2 {
+    font-size: 1.9rem;
+    color: #0b1f3a;
+    margin-bottom: 8px;
+}
+
+.intro p {
+    color: #5c6675;
+}
+
+
+/* Calculator grid */
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+
+    gap: 22px;
+    padding-bottom: 45px;
+}
+
+
+/* Calculator cards */
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    border: 1px solid #dce2ea;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.card h3 {
+    color: #0b1f3a;
+    margin-bottom: 18px;
+    font-size: 1.25rem;
+}
+
+
+/* Form elements */
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px 12px;
+
+    border: 1px solid #cbd3df;
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    font-size: 0.95rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #0b1f3a;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 31, 58, 0.10);
+}
+
+
+/* Buttons */
+
+button {
+    width: 100%;
+
+    margin-top: 18px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #0b1f3a;
+    color: white;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+button:hover {
+    background: #163b6d;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* Result */
+
+.result {
+    margin-top: 18px;
+    padding: 13px;
+
+    min-height: 48px;
+
+    background: #f0f4f8;
+
+    border-left: 4px solid #d4af37;
+
+    border-radius: 5px;
+
+    font-weight: 600;
+    color: #172033;
+}
+
+
+/* Footer */
+
+footer {
+    background: #0b1f3a;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 28px 20px;
+
+    font-size: 0.9rem;
+}
+
+footer p + p {
+    margin-top: 4px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 0.95rem;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .intro {
+        padding-top: 30px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
