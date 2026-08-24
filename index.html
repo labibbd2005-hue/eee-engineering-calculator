@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EEE Engineering Calculator</title>
+
+    <meta
+        name="description"
+        content="A web-based Electrical and Electronic Engineering calculator."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>EEE Engineering Calculator</h1>
+            <p>Electrical & Electronic Engineering Toolkit</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <h2>Engineering Calculations</h2>
+            <p>
+                Select a calculation below and enter the required values.
+            </p>
+        </section>
+
+        <section class="calculator-grid">
+
+            <!-- Ohm's Law -->
+            <div class="card">
+                <h3>Ohm's Law</h3>
+
+                <label for="ohmMode">Calculate</label>
+                <select id="ohmMode">
+                    <option value="voltage">Voltage</option>
+                    <option value="current">Current</option>
+                    <option value="resistance">Resistance</option>
+                </select>
+
+                <label for="ohmV">Voltage (V)</label>
+                <input type="number" id="ohmV" placeholder="Enter voltage">
+
+                <label for="ohmI">Current (A)</label>
+                <input type="number" id="ohmI" placeholder="Enter current">
+
+                <label for="ohmR">Resistance (Ω)</label>
+                <input type="number" id="ohmR" placeholder="Enter resistance">
+
+                <button onclick="calculateOhm()">Calculate</button>
+
+                <div class="result" id="ohmResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- Electrical Power -->
+            <div class="card">
+                <h3>Electrical Power</h3>
+
+                <label for="powerV">Voltage (V)</label>
+                <input type="number" id="powerV" placeholder="Enter voltage">
+
+                <label for="powerI">Current (A)</label>
+                <input type="number" id="powerI" placeholder="Enter current">
+
+                <button onclick="calculatePower()">Calculate</button>
+
+                <div class="result" id="powerResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- Series Resistors -->
+            <div class="card">
+                <h3>Series Resistors</h3>
+
+                <label for="seriesResistors">
+                    Resistors (Ω)
+                </label>
+
+                <input
+                    type="text"
+                    id="seriesResistors"
+                    placeholder="e.g. 10, 20, 30"
+                >
+
+                <button onclick="calculateSeries()">
+                    Calculate
+                </button>
+
+                <div class="result" id="seriesResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- Parallel Resistors -->
+            <div class="card">
+                <h3>Parallel Resistors</h3>
+
+                <label for="parallelResistors">
+                    Resistors (Ω)
+                </label>
+
+                <input
+                    type="text"
+                    id="parallelResistors"
+                    placeholder="e.g. 10, 20, 30"
+                >
+
+                <button onclick="calculateParallel()">
+                    Calculate
+                </button>
+
+                <div class="result" id="parallelResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- Capacitor -->
+            <div class="card">
+                <h3>Capacitor</h3>
+
+                <label for="capMode">Calculate</label>
+
+                <select id="capMode">
+                    <option value="reactance">
+                        Capacitive Reactance
+                    </option>
+
+                    <option value="energy">
+                        Stored Energy
+                    </option>
+                </select>
+
+                <label for="capFrequency">
+                    Frequency (Hz)
+                </label>
+
+                <input
+                    type="number"
+                    id="capFrequency"
+                    placeholder="Enter frequency"
+                >
+
+                <label for="capCapacitance">
+                    Capacitance (F)
+                </label>
+
+                <input
+                    type="number"
+                    id="capCapacitance"
+                    placeholder="Enter capacitance"
+                >
+
+                <label for="capVoltage">
+                    Voltage (V)
+                </label>
+
+                <input
+                    type="number"
+                    id="capVoltage"
+                    placeholder="Enter voltage"
+                >
+
+                <button onclick="calculateCapacitor()">
+                    Calculate
+                </button>
+
+                <div class="result" id="capResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- Inductor -->
+            <div class="card">
+                <h3>Inductor</h3>
+
+                <label for="indMode">Calculate</label>
+
+                <select id="indMode">
+                    <option value="reactance">
+                        Inductive Reactance
+                    </option>
+
+                    <option value="energy">
+                        Stored Energy
+                    </option>
+                </select>
+
+                <label for="indFrequency">
+                    Frequency (Hz)
+                </label>
+
+                <input
+                    type="number"
+                    id="indFrequency"
+                    placeholder="Enter frequency"
+                >
+
+                <label for="indInductance">
+                    Inductance (H)
+                </label>
+
+                <input
+                    type="number"
+                    id="indInductance"
+                    placeholder="Enter inductance"
+                >
+
+                <label for="indCurrent">
+                    Current (A)
+                </label>
+
+                <input
+                    type="number"
+                    id="indCurrent"
+                    placeholder="Enter current"
+                >
+
+                <button onclick="calculateInductor()">
+                    Calculate
+                </button>
+
+                <div class="result" id="indResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- AC Impedance -->
+            <div class="card">
+                <h3>AC Impedance</h3>
+
+                <label for="impResistance">
+                    Resistance R (Ω)
+                </label>
+
+                <input
+                    type="number"
+                    id="impResistance"
+                    placeholder="Enter resistance"
+                >
+
+                <label for="impReactance">
+                    Reactance X (Ω)
+                </label>
+
+                <input
+                    type="number"
+                    id="impReactance"
+                    placeholder="Enter reactance"
+                >
+
+                <button onclick="calculateImpedance()">
+                    Calculate
+                </button>
+
+                <div class="result" id="impResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- Power Factor -->
+            <div class="card">
+                <h3>Power Factor</h3>
+
+                <label for="realPower">
+                    Real Power (W)
+                </label>
+
+                <input
+                    type="number"
+                    id="realPower"
+                    placeholder="Enter real power"
+                >
+
+                <label for="apparentPower">
+                    Apparent Power (VA)
+                </label>
+
+                <input
+                    type="number"
+                    id="apparentPower"
+                    placeholder="Enter apparent power"
+                >
+
+                <button onclick="calculatePowerFactor()">
+                    Calculate
+                </button>
+
+                <div class="result" id="pfResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- Transformer -->
+            <div class="card">
+                <h3>Ideal Transformer</h3>
+
+                <label for="primaryVoltage">
+                    Primary Voltage (V)
+                </label>
+
+                <input
+                    type="number"
+                    id="primaryVoltage"
+                    placeholder="Enter primary voltage"
+                >
+
+                <label for="primaryTurns">
+                    Primary Turns
+                </label>
+
+                <input
+                    type="number"
+                    id="primaryTurns"
+                    placeholder="Enter primary turns"
+                >
+
+                <label for="secondaryTurns">
+                    Secondary Turns
+                </label>
+
+                <input
+                    type="number"
+                    id="secondaryTurns"
+                    placeholder="Enter secondary turns"
+                >
+
+                <button onclick="calculateTransformer()">
+                    Calculate
+                </button>
+
+                <div class="result" id="transformerResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- Frequency / Wavelength -->
+            <div class="card">
+                <h3>Frequency & Wavelength</h3>
+
+                <label for="waveFrequency">
+                    Frequency (Hz)
+                </label>
+
+                <input
+                    type="number"
+                    id="waveFrequency"
+                    placeholder="Enter frequency"
+                >
+
+                <button onclick="calculateWavelength()">
+                    Calculate
+                </button>
+
+                <div class="result" id="waveResult">
+                    Result will appear here
+                </div>
+            </div>
+
+
+            <!-- Decibel -->
+            <div class="card">
+                <h3>Decibel Gain</h3>
+
+                <label for="dbMode">Calculation Type</label>
+
+                <select id="dbMode">
+                    <option value="power">
+                        Power Ratio
+                    </option>
+
+                    <option value="voltage">
+                        Voltage Ratio
+                    </option>
+                </select>
+
+                <label for="dbInput">
+                    Input
+                </label>
+
+                <input
+                    type="number"
+                    id="dbInput"
+                    placeholder="Enter input"
+                >
+
+                <label for="dbOutput">
+                    Output
+                </label>
+
+                <input
+                    type="number"
+                    id="dbOutput"
+                    placeholder="Enter output"
+                >
+
+                <button onclick="calculateDB()">
+                    Calculate
+                </button>
+
+                <div class="result" id="dbResult">
+                    Result will appear here
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            EEE Engineering Calculator | Built with HTML, CSS & JavaScript
+        </p>
+        <p>
+            Student Engineering Project
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+                  </html>
