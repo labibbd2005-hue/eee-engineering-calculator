@@ -81,8 +81,6 @@ The goal is to build useful engineering tools while strengthening my understandi
 BSc in Electrical & Electronic Engineering (EEE)  
 Chittagong Independent University (CIU)
 
-[GitHub](https://github.com/labibbd2005-hue)
-
 ---
 
 *Built with HTML, CSS & JavaScript | 2026*
